@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ibilling/contract_pages/contract_pages_one.dart';
+import 'package:ibilling/contract_pages/filter_pages.dart';
 import 'package:ibilling/contract_pages/search_page.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         primarySwatch: Colors.amber,
       ),
-      home: const SearchPage(),
+      home: const FilterPage(),
     );
   }
 }

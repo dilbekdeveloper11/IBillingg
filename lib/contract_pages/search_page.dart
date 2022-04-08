@@ -16,11 +16,12 @@ class SearchPage extends StatelessWidget {
           color: Colores.whiteFFFF,
         ),
         title: Container(
-          height: getH(35),
+          height: getH(65),
           width: getW(220),
           child: TextFormField(
             keyboardType: TextInputType.text,
             decoration: InputDecoration(
+              border: const OutlineInputBorder(borderSide: BorderSide.none),
               hintText: "Search by keywords",
               hintStyle: TextStyle(
                 fontSize: getH(17),
