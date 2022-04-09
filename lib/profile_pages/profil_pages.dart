@@ -176,11 +176,11 @@ class ProfilPage extends StatelessWidget {
                                 leading: CircleAvatar(
                                   radius: getH(14),
                                   backgroundImage: const AssetImage(
-                                    "assets/images/1200px-Flag_of_Uzbekistan.png",
+                                    "assets/images/Flag_of_Russia.png",
                                   ),
                                 ),
                                 title: Text(
-                                  "O‘zbek (Lotin)",
+                                  "Русский",
                                   style: TextStyle(
                                     fontSize: getH(14),
                                     color: Colores.whiteColor,
@@ -195,11 +195,11 @@ class ProfilPage extends StatelessWidget {
                                 leading: CircleAvatar(
                                   radius: getH(14),
                                   backgroundImage: const AssetImage(
-                                    "assets/images/1200px-Flag_of_Uzbekistan.png",
+                                    "assets/images/Us_flag_large_38_stars.png",
                                   ),
                                 ),
                                 title: Text(
-                                  "O‘zbek (Lotin)",
+                                  "English (USA)",
                                   style: TextStyle(
                                     fontSize: getH(14),
                                     color: Colores.whiteColor,
@@ -209,7 +209,19 @@ class ProfilPage extends StatelessWidget {
                                   "assets/images/ic_sharp-radio-button-checked.svg",
                                   color: Colores.greyColor,
                                 ),
-                              )
+                              ),
+                              SizedBox(height: getH(30)),
+                              Row(
+                                children: [
+                                  Widgets.cyanContainer(
+                                    text: "Cancel",
+                                    height: 37,
+                                    width: 125,
+                                    opacity: 0.3,
+                                    titleColor: const Color(0xff008F7F),
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
                         ),
