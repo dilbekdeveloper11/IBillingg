@@ -10,7 +10,7 @@ class MyAppBar extends StatelessWidget {
   @override
   PreferredSizeWidget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color(0xff141416),
       centerTitle: false,
       leading: Container(
         height: getH(24),

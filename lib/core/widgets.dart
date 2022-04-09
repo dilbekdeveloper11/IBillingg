@@ -42,7 +42,7 @@ class Widgets {
           title2,
           style: TextStyle(fontSize: getH(14), color: Colores.greyColor),
         ),
-        SizedBox(width: getW(102.64)),
+        const Spacer(),
         Text(
           title3,
           style: TextStyle(fontSize: getH(14), color: Colores.greyColor),
