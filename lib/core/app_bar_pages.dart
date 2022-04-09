@@ -4,8 +4,8 @@ import 'package:ibilling/core/Size_config.dart';
 import 'package:ibilling/core/colors.dart';
 
 class MyAppBar extends StatelessWidget {
-  
-  const MyAppBar({Key? key}) : super(key: key);
+  String text;
+  MyAppBar({Key? key,required this.text}) : super(key: key);
 
   @override
   PreferredSizeWidget build(BuildContext context) {
@@ -22,7 +22,7 @@ class MyAppBar extends StatelessWidget {
         ),
       ),
       title: Text(
-        "Contracts",
+        text,
         style: TextStyle(
           fontSize: getH(20),
           color: Colores.whiteFFFF,

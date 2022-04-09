@@ -13,7 +13,7 @@ class ContractPageOne extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      appBar:const MyAppBar().build(context),
+      appBar:MyAppBar(text: "Contra",).build(context),
       body: CustomScrollView(
         physics: const ScrollPhysics(),
         slivers: [

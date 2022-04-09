@@ -138,7 +138,7 @@ class Widgets {
     String title = "",
   }) {
     return Container(
-      height: getH(45),
+      height: getH(40),
       width: getW(142),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
