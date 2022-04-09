@@ -24,20 +24,73 @@ class HistoryPages extends StatelessWidget {
                 left: getW(16),
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "Date",
                     style: TextStyle(
-                      fontSize: getH(14),
+                      fontSize: getH(15),
                       color: Colores.greyColor,
                     ),
                   ),
                   SizedBox(height: getH(16)),
-                  Row(children: [Widgets.calendarCurrent(context: context)],)
+                  Row(
+                    children: [
+                      Widgets.calendarCurrent(context: context),
+                      SizedBox(
+                        width: getH(12),
+                      ),
+                      Text(
+                        "-",
+                        style: TextStyle(
+                          fontSize: getH(40),
+                          color: Colores.whiteFFFF,
+                        ),
+                      ),
+                      SizedBox(width: getW(12)),
+                      Widgets.calendarCurrent(context: context, title: "To"),
+                    ],
+                  ),
                 ],
               ),
             ),
-          )
+          ),
+          SliverGrid(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 1,
+              mainAxisExtent: getH(150),
+            ),
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                return Container(
+                  color: Colors.black,
+                  height: double.infinity,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: EdgeInsets.only(right: getW(22), top: getH(12)),
+                    child: Container(
+                      color: Colors.black,
+                      child: Widgets.Card(
+                        ntitle: "№ 154",
+                        height: 21,
+                        width: 49,
+                        colors: const Color(0xff49B7A5),
+                        opacity: 0.15,
+                        smallTitle: "Paid",
+                        smallTitleColor: const Color(0xff49B7A5),
+                        ismi: "Yoldoshova Ziyoda",
+                        amount: "1,200,000 UZS",
+                        lastInvoice: "№ 156",
+                        number: "6",
+                        date: "31.01.2021",
+                      ),
+                    ),
+                  ),
+                );
+              },
+              childCount: 6,
+            ),
+          ),
         ],
       ),
     );
