@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ibilling/core/Size_config.dart';
 import 'package:ibilling/core/colors.dart';
+import 'package:ibilling/core/widgets.dart';
 
 class FilterPage extends StatelessWidget {
   const FilterPage({Key? key}) : super(key: key);
@@ -100,16 +101,30 @@ class FilterPage extends StatelessWidget {
             SizedBox(height: getH(16)),
             Row(
               children: [
-                Container(
-                  height: getH(37),
-                  width: getW(116),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      getH(10),
-                    ),
-                    color: Color(0xff2A2A2D),
-                  ),
-                )
+                Widgets.calendarCurrent(context: context),
+                SizedBox(width: getW(12)),
+                Text(
+                  "-",
+                  style:
+                      TextStyle(fontSize: getH(40), color: Colores.whiteFFFF),
+                ),
+                SizedBox(width: getW(12)),
+                Widgets.calendarCurrent(context: context, title: "To"),
+                SizedBox(width: getW(16)),
+              ],
+            ),
+            SizedBox(height: getH(344)),
+            Row(
+              children: [
+                Widgets.cyanContainer(
+                  text: "Cancel",
+                  height: 40,
+                  width: 164,
+                  opacity: 0.3,
+                  titleColor: const Color(0xff008F7F),
+                ),
+                SizedBox(width: getW(16)),
+                Widgets.cyanContainer(text: "Apply filters", height: 40, width: 164, opacity: 1, titleColor: Colores.whiteFFFF)
               ],
             )
           ],

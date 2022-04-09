@@ -4,12 +4,18 @@ import 'package:ibilling/core/Size_config.dart';
 import 'package:ibilling/core/colors.dart';
 
 class Widgets {
-  static cyanContainer({required String text}) {
+  static cyanContainer({
+    required String text,
+    required double height,
+    required double width,
+    required double opacity,
+    required Color titleColor,
+  }) {
     return Container(
-      height: getH(33),
-      width: getW(92),
+      height: getH(height),
+      width: getW(width),
       decoration: BoxDecoration(
-        color: const Color(0xff00A795),
+        color: const Color(0xff00A795).withOpacity(opacity),
         borderRadius: BorderRadius.circular(
           getH(6),
         ),
@@ -17,7 +23,7 @@ class Widgets {
       child: Center(
         child: Text(
           text,
-          style: TextStyle(fontSize: getH(15), color: Colores.whiteFFFF),
+          style: TextStyle(fontSize: getH(15), color: titleColor),
         ),
       ),
     );
@@ -126,53 +132,49 @@ class Widgets {
       ),
     );
   }
+
+  static calendarCurrent({
+    required BuildContext context,
+    String title = "",
+  }) {
+    return Container(
+      height: getH(45),
+      width: getW(142),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(
+          getH(10),
+        ),
+        color: Color(0xff2A2A2D),
+      ),
+      child: Row(
+        children: [
+          SizedBox(width: getH(8)),
+          Text(
+            title,
+            style: TextStyle(fontSize: getH(15), color: Colores.greyColor),
+          ),
+          SizedBox(width: getH(8)),
+          Text(
+            "16.02.2021",
+            style: TextStyle(fontSize: getH(15), color: Colores.greyColor),
+          ),
+          SizedBox(width: getH(8)),
+          InkWell(
+            child: Icon(
+              Icons.calendar_month,
+              color: Colores.greyColor,
+            ),
+            onTap: () {
+              showDatePicker(
+                context: context,
+                initialDate: DateTime(DateTime.now().year),
+                firstDate: DateTime(2022),
+                lastDate: DateTime(2024),
+              );
+            },
+          )
+        ],
+      ),
+    );
+  }
 }
-// Dilbek Baxtiyorov, [08/04/22 01:30]
-// Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
-//         children: [
-//           CalendarAgenda(
-//             appbar: false,
-//             initialDate: DateTime.now(),
-//             firstDate: DateTime.now().subtract(Duration(days: 140)),
-//             lastDate: DateTime.now().add(Duration(days: 4)),
-//             onDateSelected: (date) {
-//               print(date);
-//             },
-//           ),
-//           SizedBox(height: getH(32)),
-//           Padding(
-//             padding: EdgeInsets.only(
-//               left: getW(16),
-//             ),
-//             child: Row(
-//               children: [
-//                 Widgets.cyanContainer(text: "Contracts"),
-//                 SizedBox(width: getW(28)),
-//                 TextButton(
-//                   onPressed: () {},
-//                   child: Text(
-//                     "Invoice",
-//                     style: TextStyle(fontSize: getH(15), color: Colors.white),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//           SizedBox(height: getH(20)),
-//           Widgets.Card(
-//             ntitle: "№ 154",
-//             height: 21,
-//             width: 49,
-//             colors: Color(0xff49B7A5),
-//             opacity: 0.15,
-//             smallTitle: "Paid",
-//             smallTitleColor: Color(0xff49B7A5),
-//             ismi: "Yoldoshova Ziyoda",
-//             amount: "1,200,000 UZS",
-//             lastInvoice: "№ 156",
-//             number: "6",
-//             date: "31.01.2021",
-//           ),
-//         ],
-//       ),

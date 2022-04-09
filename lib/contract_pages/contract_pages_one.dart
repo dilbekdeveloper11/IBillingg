@@ -2,6 +2,7 @@ import 'package:calendar_agenda/calendar_agenda.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ibilling/core/Size_config.dart';
+import 'package:ibilling/core/app_bar_pages.dart';
 import 'package:ibilling/core/colors.dart';
 import 'package:ibilling/core/widgets.dart';
 
@@ -12,47 +13,9 @@ class ContractPageOne extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        centerTitle: false,
-        leading: Container(
-
-          height: getH(24),
-          width: getW(24),
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/Ellipse 13.png"),
-            ),
-          ),
-        ),
-        title: Text(
-          "Contracts",
-          style: TextStyle(
-            fontSize: getH(20),
-            color: Colores.whiteFFFF,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        actions: [
-          Row(
-            children: [
-              SvgPicture.asset("assets/images/Filter.svg"),
-              SizedBox(width: getW(20)),
-              Container(
-                height: getH(18),
-                width: getW(1),
-                color: Colores.whiteFFFF,
-              ),
-              SizedBox(width: getW(21.25)),
-              SvgPicture.asset("assets/images/Group.svg"),
-              SizedBox(width: getW(19)),
-            ],
-          ),
-        ],
-      ),
+      appBar:const MyAppBar().build(context),
       body: CustomScrollView(
-        physics: ScrollPhysics(),
+        physics: const ScrollPhysics(),
         slivers: [
           SliverAppBar(
             toolbarHeight: getH(233),
@@ -62,8 +25,8 @@ class ContractPageOne extends StatelessWidget {
                 CalendarAgenda(
                   appbar: false,
                   initialDate: DateTime.now(),
-                  firstDate: DateTime.now().subtract(Duration(days: 140)),
-                  lastDate: DateTime.now().add(Duration(days: 4)),
+                  firstDate: DateTime.now().subtract(const Duration(days: 140)),
+                  lastDate: DateTime.now().add(const Duration(days: 4)),
                   onDateSelected: (date) {
                     print(date);
                   },
@@ -75,14 +38,21 @@ class ContractPageOne extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      Widgets.cyanContainer(text: "Contracts"),
+                      Widgets.cyanContainer(
+                          text: "Contracts",
+                          height: 33,
+                          width: 92,
+                          opacity: 1,
+                          titleColor: Colores.whiteColor),
                       SizedBox(width: getW(28)),
                       TextButton(
                         onPressed: () {},
                         child: Text(
                           "Invoice",
                           style: TextStyle(
-                              fontSize: getH(15), color: Colors.white),
+                            fontSize: getH(15),
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ],
@@ -129,7 +99,7 @@ class ContractPageOne extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 2,
-        selectedLabelStyle: TextStyle(color: Colors.white),
+        selectedLabelStyle: const TextStyle(color: Colors.white),
         showSelectedLabels: true,
         items: [
           BottomNavigationBarItem(
