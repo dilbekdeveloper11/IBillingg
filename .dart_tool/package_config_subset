@@ -6,6 +6,10 @@ async
 2.12
 file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2/
 file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2/lib/
+bloc
+2.12
+file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/bloc-8.0.3/
+file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/bloc-8.0.3/lib/
 boolean_selector
 2.12
 file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/
@@ -38,6 +42,10 @@ fake_async
 2.12
 file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/
 file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/lib/
+flutter_bloc
+2.12
+file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_bloc-8.0.1/
+file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_bloc-8.0.1/lib/
 flutter_lints
 2.12
 file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4/
@@ -66,6 +74,10 @@ meta
 2.12
 file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.7.0/
 file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.7.0/lib/
+nested
+2.12
+file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0/
+file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0/lib/
 path
 2.12
 file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.0/
@@ -82,6 +94,10 @@ petitparser
 2.14
 file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-4.4.0/
 file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-4.4.0/lib/
+provider
+2.12
+file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.2/
+file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.2/lib/
 scrollable_positioned_list
 2.12
 file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/scrollable_positioned_list-0.2.3/

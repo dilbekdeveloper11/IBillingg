@@ -130,103 +130,113 @@ class ProfilPage extends StatelessWidget {
               ),
               onTap: () {
                 showDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        backgroundColor: Colors.transparent,
-                        content: Container(
-                          height: getH(279),
-                          width: getW(327),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(
-                                getH(8),
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      backgroundColor: Colors.transparent,
+                      content: Container(
+                        height: getH(282),
+                        width: getW(352),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(
+                              getH(8),
+                            ),
+                            color: const Color(0xff2A2A2D)),
+                        child: Column(
+                          children: [
+                            SizedBox(height: getH(16)),
+                            Text(
+                              "Choose a language",
+                              style: TextStyle(
+                                fontSize: getH(16),
+                                color: Colores.whiteFFFF,
                               ),
-                              color: const Color(0xff2A2A2D)),
-                          child: Column(
-                            children: [
-                              SizedBox(height: getH(16)),
-                              Text(
-                                "Choose a language",
+                            ),
+                            SizedBox(height: getH(30)),
+                            ListTile(
+                              leading: CircleAvatar(
+                                radius: getH(14),
+                                backgroundImage: const AssetImage(
+                                  "assets/images/1200px-Flag_of_Uzbekistan.png",
+                                ),
+                              ),
+                              title: Text(
+                                "O‘zbek (Lotin)",
                                 style: TextStyle(
-                                  fontSize: getH(16),
-                                  color: Colores.whiteFFFF,
+                                  fontSize: getH(14),
+                                  color: Colores.whiteColor,
                                 ),
                               ),
-                              SizedBox(height: getH(30)),
-                              ListTile(
-                                leading: CircleAvatar(
-                                  radius: getH(14),
-                                  backgroundImage: const AssetImage(
-                                    "assets/images/1200px-Flag_of_Uzbekistan.png",
-                                  ),
-                                ),
-                                title: Text(
-                                  "O‘zbek (Lotin)",
-                                  style: TextStyle(
-                                    fontSize: getH(14),
-                                    color: Colores.whiteColor,
-                                  ),
-                                ),
-                                trailing: SvgPicture.asset(
-                                  "assets/images/ic_sharp-radio-button-checked.svg",
-                                  color: Colores.greyColor,
+                              trailing: SvgPicture.asset(
+                                "assets/images/ic_sharp-radio-button-checked.svg",
+                                color: const Color(0xff008F7F),
+                              ),
+                            ),
+                            ListTile(
+                              leading: CircleAvatar(
+                                radius: getH(14),
+                                backgroundImage: const AssetImage(
+                                  "assets/images/Flag_of_Russia.png",
                                 ),
                               ),
-                              ListTile(
-                                leading: CircleAvatar(
-                                  radius: getH(14),
-                                  backgroundImage: const AssetImage(
-                                    "assets/images/Flag_of_Russia.png",
-                                  ),
-                                ),
-                                title: Text(
-                                  "Русский",
-                                  style: TextStyle(
-                                    fontSize: getH(14),
-                                    color: Colores.whiteColor,
-                                  ),
-                                ),
-                                trailing: SvgPicture.asset(
-                                  "assets/images/ic_sharp-radio-button-checked.svg",
-                                  color: Colores.greyColor,
+                              title: Text(
+                                "Русский",
+                                style: TextStyle(
+                                  fontSize: getH(14),
+                                  color: Colores.whiteColor,
                                 ),
                               ),
-                              ListTile(
-                                leading: CircleAvatar(
-                                  radius: getH(14),
-                                  backgroundImage: const AssetImage(
-                                    "assets/images/Us_flag_large_38_stars.png",
-                                  ),
-                                ),
-                                title: Text(
-                                  "English (USA)",
-                                  style: TextStyle(
-                                    fontSize: getH(14),
-                                    color: Colores.whiteColor,
-                                  ),
-                                ),
-                                trailing: SvgPicture.asset(
-                                  "assets/images/ic_sharp-radio-button-checked.svg",
-                                  color: Colores.greyColor,
+                              trailing: SvgPicture.asset(
+                                "assets/images/ic_sharp-radio-button-checked.svg",
+                                color: const Color(0xff008F7F),
+                              ),
+                            ),
+                            ListTile(
+                              leading: CircleAvatar(
+                                radius: getH(14),
+                                backgroundImage: const AssetImage(
+                                  "assets/images/Us_flag_large_38_stars.png",
                                 ),
                               ),
-                              SizedBox(height: getH(30)),
-                              Row(
-                                children: [
-                                  Widgets.cyanContainer(
-                                    text: "Cancel",
-                                    height: 37,
-                                    width: 125,
-                                    opacity: 0.3,
-                                    titleColor: const Color(0xff008F7F),
-                                  ),
-                                ],
+                              title: Text(
+                                "English (USA)",
+                                style: TextStyle(
+                                  fontSize: getH(14),
+                                  color: Colores.whiteColor,
+                                ),
                               ),
-                            ],
-                          ),
+                              trailing: SvgPicture.asset(
+                                "assets/images/ic_sharp-radio-button-checked.svg",
+                                color: const Color(0xff008F7F),
+                              ),
+                            ),
+                            SizedBox(height: getH(10)),
+                            Row(
+                              children: [
+                                SizedBox(width: getW(15)),
+                                Widgets.cyanContainer(
+                                  text: "Cancel",
+                                  height: 37,
+                                  width: 110,
+                                  opacity: 0.3,
+                                  titleColor: const Color(0xff008F7F),
+                                ),
+                                SizedBox(width: getW(8)),
+                                Widgets.cyanContainer(
+                                  text: "Done",
+                                  height: 37,
+                                  width: 110,
+                                  opacity: 1,
+                                  titleColor: Colores.whiteFFFF,
+                                )
+                              ],
+                            ),
+                          ],
                         ),
-                      );
-                    });
+                      ),
+                    );
+                  },
+                );
               },
             )
           ],

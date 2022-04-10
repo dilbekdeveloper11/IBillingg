@@ -1,128 +1,70 @@
 import 'package:calendar_agenda/calendar_agenda.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ibilling/contract_pages/contracts_pages.dart';
 import 'package:ibilling/core/Size_config.dart';
 import 'package:ibilling/core/app_bar_pages.dart';
 import 'package:ibilling/core/colors.dart';
 import 'package:ibilling/core/widgets.dart';
+import 'package:ibilling/create_contracts_pages/new_contract_pages.dart';
+import 'package:ibilling/cubit/cubit_page.dart';
+import 'package:ibilling/cubit/cubit_state_pages.dart';
+import 'package:ibilling/history_pages/history_pages.dart';
+import 'package:ibilling/profile_pages/profil_pages.dart';
+import 'package:ibilling/saved_pages/saved_pages.dart';
 
 class ContractPageOne extends StatelessWidget {
-  const ContractPageOne({Key? key}) : super(key: key);
-
+  ContractPageOne({Key? key}) : super(key: key);
+  final List pages = [
+    const ContractPage(),
+    const HistoryPages(),
+    const NewContractspages(),
+    const SavedPages(),
+    const ProfilPage()
+  ];
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(
-      appBar:MyAppBar(text: "Contra",).build(context),
-      body: CustomScrollView(
-        physics: const ScrollPhysics(),
-        slivers: [
-          SliverAppBar(
-            toolbarHeight: getH(233),
-            backgroundColor: Colors.black,
-            flexibleSpace: Column(
-              children: [
-                CalendarAgenda(
-                  appbar: false,
-                  initialDate: DateTime.now(),
-                  firstDate: DateTime.now().subtract(const Duration(days: 140)),
-                  lastDate: DateTime.now().add(const Duration(days: 4)),
-                  onDateSelected: (date) {
-                    print(date);
-                  },
+    return BlocProvider(
+      create: ((context) => BillingCubit()),
+      child: BlocConsumer<BillingCubit,BillingState>(
+        builder: (context, state) {
+          return Scaffold(
+            body: pages[context.watch<BillingCubit>().currrentIndex],
+            bottomNavigationBar: BottomNavigationBar(
+              currentIndex: context.watch<BillingCubit>().currrentIndex,
+              selectedLabelStyle: const TextStyle(color: Colors.white),
+              showSelectedLabels: true,
+              onTap: (v) {
+                context.read<BillingCubit>().pageIndex(v);
+              },
+              items: [
+                BottomNavigationBarItem(
+                  label: "Contracts",
+                  icon: SvgPicture.asset("assets/images/Document.svg"),
                 ),
-                SizedBox(height: getH(32)),
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: getW(16),
-                  ),
-                  child: Row(
-                    children: [
-                      Widgets.cyanContainer(
-                          text: "Contracts",
-                          height: 33,
-                          width: 92,
-                          opacity: 1,
-                          titleColor: Colores.whiteColor),
-                      SizedBox(width: getW(28)),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          "Invoice",
-                          style: TextStyle(
-                            fontSize: getH(15),
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                BottomNavigationBarItem(
+                  label: "History",
+                  icon: SvgPicture.asset("assets/images/Time Circle.svg"),
+                ),
+                BottomNavigationBarItem(
+                  label: "New",
+                  icon: SvgPicture.asset("assets/images/Plus.svg"),
+                ),
+                BottomNavigationBarItem(
+                  label: "Saved",
+                  icon: SvgPicture.asset("assets/images/Bookmark.svg"),
+                ),
+                BottomNavigationBarItem(
+                  label: "Profile",
+                  icon: SvgPicture.asset("assets/images/Profile.svg"),
                 ),
               ],
             ),
-          ),
-          SliverGrid(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 1, mainAxisExtent: getH(150)),
-            delegate: SliverChildBuilderDelegate(
-              (context, index) {
-                return Container(
-                  color: Colors.black,
-                  height: double.infinity,
-                  width: double.infinity,
-                  child: Padding(
-                    padding: EdgeInsets.only(right: getW(22), top: getH(12)),
-                    child: Container(
-                      color: Colors.black,
-                      child: Widgets.Card(
-                        ntitle: "№ 154",
-                        height: 21,
-                        width: 49,
-                        colors: const Color(0xff49B7A5),
-                        opacity: 0.15,
-                        smallTitle: "Paid",
-                        smallTitleColor: const Color(0xff49B7A5),
-                        ismi: "Yoldoshova Ziyoda",
-                        amount: "1,200,000 UZS",
-                        lastInvoice: "№ 156",
-                        number: "6",
-                        date: "31.01.2021",
-                      ),
-                    ),
-                  ),
-                );
-              },
-              childCount: 6,
-            ),
-          ),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 2,
-        selectedLabelStyle: const TextStyle(color: Colors.white),
-        showSelectedLabels: true,
-        items: [
-          BottomNavigationBarItem(
-            label: "Contracts",
-            icon: SvgPicture.asset("assets/images/Document.svg"),
-          ),
-          BottomNavigationBarItem(
-            label: "History",
-            icon: SvgPicture.asset("assets/images/Time Circle.svg"),
-          ),
-          BottomNavigationBarItem(
-            label: "New",
-            icon: SvgPicture.asset("assets/images/Plus.svg"),
-          ),
-          BottomNavigationBarItem(
-            label: "Saved",
-            icon: SvgPicture.asset("assets/images/Bookmark.svg"),
-          ),
-          BottomNavigationBarItem(
-            label: "Profile",
-            icon: SvgPicture.asset("assets/images/Profile.svg"),
-          ),
-        ],
+          );
+        },
+        listener: (context, state) {},
       ),
     );
   }

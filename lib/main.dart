@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         primarySwatch: Colors.amber,
       ),
-      home: const ProfilPage(),
+      home:  ContractPageOne(),
     );
   }
 }

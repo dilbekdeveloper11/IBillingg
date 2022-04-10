@@ -7,7 +7,7 @@ class RouteHelper {
     switch (settings.name) {
       case "/":
         return MaterialPageRoute(
-            builder: ((context) => const ContractPageOne()));
+            builder: ((context) =>  ContractPageOne()));
     }
   }
 }
