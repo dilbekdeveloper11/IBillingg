@@ -74,6 +74,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_expanded_tile",
+      "rootUri": "file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_expanded_tile-0.3.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///home/dilbek/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4",
       "packageUri": "lib/",
@@ -230,7 +236,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-04-09T12:35:18.610871Z",
+  "generated": "2022-04-10T04:03:10.176910Z",
   "generator": "pub",
   "generatorVersion": "2.16.1"
 }

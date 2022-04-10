@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_expanded_tile/flutter_expanded_tile.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:ibilling/core/Size_config.dart';
 import 'package:ibilling/core/colors.dart';
 import 'package:ibilling/core/widgets.dart';
@@ -9,6 +11,7 @@ class NewContractspages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -41,25 +44,103 @@ class NewContractspages extends StatelessWidget {
               "Fase",
               style: TextStyle(
                 fontSize: getH(14),
-                color: const Color(0xffF1F1F1),
+                color: const Color(0xffF1F1F1).withOpacity(0.4),
               ),
             ),
-            SizedBox(height: getH(6)),
+            SizedBox(height: getH(10)),
             Widgets.NewContractContainer(
-                widgets: Row(
-              children: [
-                SizedBox(
-                  width: getW(15),
+              widgets: Row(
+                children: [
+                  SizedBox(
+                    width: getW(15),
+                  ),
+                  Text("salom aleykum"),
+                  SizedBox(width: getW(150)),
+                  InkWell(
+                    child: Container(
+                      height: getH(25),
+                      width: getW(25),
+                      child: SvgPicture.asset(
+                        "assets/images/Arrow - Down Circle.svg",
+                      ),
+                    ),
+                    onTap: () {},
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: getH(18)),
+            Text(
+              "Fisher’s full name",
+              style: TextStyle(
+                fontSize: getH(14),
+                color: const Color(0xffF1F1F1).withOpacity(0.4),
+              ),
+            ),
+            SizedBox(height: getH(10)),
+            Widgets.NewContractContainer(
+              widgets: TextFormField(
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                  ),
                 ),
-                Text("salom aleykum"),
-                Spacer(),
-                ExpansionTile(
-                  title: Icon(Icons.arrow_drop_down_circle_outlined),
-                  initiallyExpanded: true,
-                  children: [Text("")],
-                )
-              ],
-            ))
+              ),
+            ),
+            SizedBox(height: getH(18)),
+            Text(
+              "Address of the organization",
+              style: TextStyle(
+                fontSize: getH(14),
+                color: const Color(0xffF1F1F1).withOpacity(0.4),
+              ),
+            ),
+            SizedBox(height: getH(10)),
+            Widgets.NewContractContainer(
+              widgets: TextFormField(
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: getH(18)),
+            Text(
+              "INN",
+              style: TextStyle(
+                fontSize: getH(14),
+                color: const Color(0xffF1F1F1).withOpacity(0.4),
+              ),
+            ),
+            SizedBox(height: getH(10)),
+            Widgets.NewContractContainer(
+              widgets: TextFormField(
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: getH(18)),
+            Text(
+              "Status of the contract",
+              style: TextStyle(
+                fontSize: getH(14),
+                color: const Color(0xffF1F1F1).withOpacity(0.4),
+              ),
+            ),
+            SizedBox(height: getH(10)),
+            Widgets.NewContractContainer(widgets: Row()),
+            SizedBox(height: getH(34)),
+            Widgets.cyanContainer(
+              text: "Save contract",
+              height: 44,
+              width: 343,
+              opacity: 1,
+              titleColor: Colores.whiteFFFF,
+            )
           ],
         ),
       ),
