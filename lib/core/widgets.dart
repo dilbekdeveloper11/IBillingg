@@ -177,4 +177,20 @@ class Widgets {
       ),
     );
   }
+
+  static NewContractContainer({required Widget widgets}) {
+    return Container(
+      height: getH(44),
+      width: getW(343),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(
+          getH(4),
+        ),
+        border: Border.all(
+          color: const Color(0xffF1F1F1).withOpacity(0.4),
+        ),
+      ),
+      child: widgets,
+    );
+  }
 }
