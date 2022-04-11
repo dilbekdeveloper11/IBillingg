@@ -11,9 +11,14 @@ class SearchPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colores.whiteFFFF,
+        leading: InkWell(
+          child: Icon(
+            Icons.arrow_back,
+            color: Colores.whiteFFFF,
+          ),
+          onTap: () {
+            Navigator.pop(context);
+          },
         ),
         title: Container(
           height: getH(65),

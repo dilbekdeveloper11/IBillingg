@@ -11,7 +11,7 @@ class HistoryPages extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      appBar: MyAppBar(text: "History").build(context),
+      appBar: MyAppBar(text: "History",searchpage: "search",filterPage: "filter",).build(context),
       body: CustomScrollView(
         physics: const ScrollPhysics(),
         slivers: [

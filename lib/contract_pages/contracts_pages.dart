@@ -12,7 +12,9 @@ class ContractPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(
-        text: "Contra",
+        searchpage: "search",
+        filterPage: "filter",
+        text: "Contracts",
       ).build(context),
       body: CustomScrollView(
         physics: const ScrollPhysics(),

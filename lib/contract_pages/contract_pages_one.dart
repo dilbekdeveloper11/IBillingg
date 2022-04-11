@@ -36,6 +36,7 @@ class ContractPageOne extends StatelessWidget {
               currentIndex: context.watch<BillingCubit>().currrentIndex,
               selectedLabelStyle: const TextStyle(color: Colors.white),
               showSelectedLabels: true,
+              fixedColor: Colors.white,
               onTap: (v) {
                 context.read<BillingCubit>().pageIndex(v);
               },

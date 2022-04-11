@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ibilling/Router/router.dart';
 import 'package:ibilling/contract_pages/contract_pages_one.dart';
 import 'package:ibilling/contract_pages/filter_pages.dart';
 import 'package:ibilling/contract_pages/search_page.dart';
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         primarySwatch: Colors.amber,
       ),
-      home: const SinglePage(),
+      initialRoute: "/",
+      onGenerateRoute: RouteHelper().onGenerateRoute,
     );
   }
 }

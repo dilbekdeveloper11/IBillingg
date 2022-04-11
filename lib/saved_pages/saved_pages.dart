@@ -12,7 +12,7 @@ class SavedPages extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: MyAppBar(text: "Saved").build(context),
+      appBar: MyAppBar(text: "Saved",searchpage: "search",filterPage: "filter",).build(context),
       body: ListView.builder(
         itemBuilder: (context, index) {
           return Padding(

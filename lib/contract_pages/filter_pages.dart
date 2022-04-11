@@ -14,9 +14,14 @@ class FilterPage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: const Color(0xff141416),
-        leading: Icon(
-          Icons.arrow_back,
-          size: getH(25),
+        leading: InkWell(
+          child: Icon(
+            Icons.arrow_back,
+            size: getH(25),
+          ),
+          onTap: () {
+            Navigator.pop(context);
+          },
         ),
         title: Text(
           "Filters",
@@ -124,7 +129,12 @@ class FilterPage extends StatelessWidget {
                   titleColor: const Color(0xff008F7F),
                 ),
                 SizedBox(width: getW(16)),
-                Widgets.cyanContainer(text: "Apply filters", height: 40, width: 164, opacity: 1, titleColor: Colores.whiteFFFF)
+                Widgets.cyanContainer(
+                    text: "Apply filters",
+                    height: 40,
+                    width: 164,
+                    opacity: 1,
+                    titleColor: Colores.whiteFFFF)
               ],
             )
           ],

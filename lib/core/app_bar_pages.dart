@@ -5,7 +5,14 @@ import 'package:ibilling/core/colors.dart';
 
 class MyAppBar extends StatelessWidget {
   String text;
-  MyAppBar({Key? key,required this.text}) : super(key: key);
+  String filterPage;
+  String searchpage;
+  MyAppBar({
+    Key? key,
+    required this.text,
+    required this.filterPage,
+    required this.searchpage,
+  }) : super(key: key);
 
   @override
   PreferredSizeWidget build(BuildContext context) {
@@ -32,7 +39,12 @@ class MyAppBar extends StatelessWidget {
       actions: [
         Row(
           children: [
-            SvgPicture.asset("assets/images/Filter.svg"),
+            InkWell(
+              child: SvgPicture.asset("assets/images/Filter.svg"),
+              onTap: () {
+                Navigator.pushNamed(context, "/${filterPage}");
+              },
+            ),
             SizedBox(width: getW(20)),
             Container(
               height: getH(18),
@@ -40,7 +52,12 @@ class MyAppBar extends StatelessWidget {
               color: Colores.whiteFFFF,
             ),
             SizedBox(width: getW(21.25)),
-            SvgPicture.asset("assets/images/Group.svg"),
+            InkWell(
+              child: SvgPicture.asset("assets/images/Group.svg"),
+              onTap: () {
+                Navigator.pushNamed(context, "/${searchpage}");
+              },
+            ),
             SizedBox(width: getW(19)),
           ],
         ),
