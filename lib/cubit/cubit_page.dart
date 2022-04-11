@@ -26,11 +26,6 @@ class BillingCubit extends Cubit<BillingState> {
     emit(BillingSearch());
   }
 
-  TextEditingController faceContoller = TextEditingController();
-  TextEditingController fullNameController = TextEditingController();
-  TextEditingController adressController = TextEditingController();
-  TextEditingController iNNContoller = TextEditingController();
-  TextEditingController statusController = TextEditingController();
-
   
+
 }

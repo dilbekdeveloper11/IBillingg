@@ -19,7 +19,7 @@ class ContractPageOne extends StatelessWidget {
   final List pages = [
     const ContractPage(),
     const HistoryPages(),
-    const NewContractspages(),
+    NewContractspages(),
     const SavedPages(),
     const ProfilPage()
   ];

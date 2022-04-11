@@ -15,6 +15,12 @@ class NewContractspages extends StatelessWidget {
   GlobalKey<FormState> formkey = GlobalKey();
   @override
   Widget build(BuildContext context) {
+    TextEditingController faceContoller = TextEditingController();
+    TextEditingController fullNameController = TextEditingController();
+    TextEditingController adressController = TextEditingController();
+    TextEditingController iNNContoller = TextEditingController();
+    TextEditingController statusController = TextEditingController();
+
     SizeConfig().init(context);
     return BlocProvider(
       create: ((context) => BillingCubit()),
@@ -62,19 +68,14 @@ class NewContractspages extends StatelessWidget {
                         SizedBox(height: getH(10)),
                         Widgets.NewContractContainer(
                           widgets: TextFormField(
-                            controller:
-                                context.watch<BillingCubit>().faceContoller,
+                            controller: faceContoller,
                             decoration: const InputDecoration(
                               border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                               ),
                             ),
                             validator: (value) {
-                              if (context
-                                  .watch<BillingCubit>()
-                                  .faceContoller
-                                  .text
-                                  .isEmpty) {
+                              if (value!.isEmpty) {
                                 return "Kerakli ma'lumot kiritilmadi";
                               }
                             },
@@ -91,20 +92,14 @@ class NewContractspages extends StatelessWidget {
                         SizedBox(height: getH(10)),
                         Widgets.NewContractContainer(
                           widgets: TextFormField(
-                            controller: context
-                                .watch<BillingCubit>()
-                                .fullNameController,
+                            controller: fullNameController,
                             decoration: const InputDecoration(
                               border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                               ),
                             ),
                             validator: (value) {
-                              if (context
-                                  .watch<BillingCubit>()
-                                  .fullNameController
-                                  .text
-                                  .isEmpty) {
+                              if (value!.isEmpty) {
                                 return "Kerakli ma'lumot kiritilmadi";
                               }
                             },
@@ -122,18 +117,14 @@ class NewContractspages extends StatelessWidget {
                         Widgets.NewContractContainer(
                           widgets: TextFormField(
                             controller:
-                                context.watch<BillingCubit>().adressController,
+                                adressController,
                             decoration: const InputDecoration(
                               border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                               ),
                             ),
                             validator: (value) {
-                              if (context
-                                  .watch<BillingCubit>()
-                                  .adressController
-                                  .text
-                                  .isEmpty) {
+                              if (value!.isEmpty) {
                                 return "Kerakli ma'lumot kiritilmadi";
                               }
                             },
@@ -151,18 +142,14 @@ class NewContractspages extends StatelessWidget {
                         Widgets.NewContractContainer(
                           widgets: TextFormField(
                             controller:
-                                context.watch<BillingCubit>().iNNContoller,
+                              iNNContoller,
                             decoration: const InputDecoration(
                               border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                               ),
                             ),
                             validator: (value) {
-                              if (context
-                                  .watch<BillingCubit>()
-                                  .iNNContoller
-                                  .text
-                                  .isEmpty) {
+                              if (value!.isEmpty) {
                                 return "Kerakli ma'lumot kiritilmadi";
                               }
                             },
@@ -180,18 +167,14 @@ class NewContractspages extends StatelessWidget {
                         Widgets.NewContractContainer(
                           widgets: TextFormField(
                             controller:
-                                context.watch<BillingCubit>().statusController,
+                                statusController,
                             decoration: const InputDecoration(
                               border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                               ),
                             ),
                             validator: (value) {
-                              if (context
-                                  .watch<BillingCubit>()
-                                  .statusController
-                                  .text
-                                  .isEmpty) {
+                              if (value!.isEmpty) {
                                 return "Kerakli ma'lumot kiritilmadi";
                               }
                             },
@@ -213,12 +196,24 @@ class NewContractspages extends StatelessWidget {
                                 content: Text(
                                   "Ma'lumotlar qabul qilindi",
                                   style: TextStyle(
-                                    fontSize: getH(20),
+                                    fontSize: getH(15),
                                     color: Colores.whiteFFFF,
                                   ),
                                 ),
                                 backgroundColor: Colors.green,
                               ));
+                            }else{
+                             ScaffoldMessenger.of(context)
+                                  .showSnackBar(SnackBar(
+                                content: Text(
+                                  "Ma'lumotlar to'liq kiritilmadi",
+                                  style: TextStyle(
+                                    fontSize: getH(15),
+                                    color: Colores.whiteFFFF,
+                                  ),
+                                ),
+                                backgroundColor: Colors.red,
+                              )); 
                             }
                           },
                         ),
