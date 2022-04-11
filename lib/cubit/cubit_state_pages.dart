@@ -9,3 +9,11 @@ class BillingInitial extends BillingState {
 class BillingChange extends BillingState {
   BillingChange();
 }
+
+class BillingFilterChange extends BillingState {
+  BillingFilterChange();
+}
+
+class BillingSearch extends BillingState {
+  BillingSearch();
+}

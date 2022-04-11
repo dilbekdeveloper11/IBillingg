@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ibilling/contract_pages/contract_pages_one.dart';
 import 'package:ibilling/cubit/cubit_state_pages.dart';
@@ -12,4 +13,24 @@ class BillingCubit extends Cubit<BillingState> {
     currrentIndex = v;
     emit(BillingChange());
   }
+
+  List values = [false, false, false, false];
+  void filterChanged(int index) {
+    values[index] = !values[index];
+    emit(BillingFilterChange());
+  }
+
+  TextEditingController controller = TextEditingController();
+  void clear() {
+    controller.clear();
+    emit(BillingSearch());
+  }
+
+  TextEditingController faceContoller = TextEditingController();
+  TextEditingController fullNameController = TextEditingController();
+  TextEditingController adressController = TextEditingController();
+  TextEditingController iNNContoller = TextEditingController();
+  TextEditingController statusController = TextEditingController();
+
+  
 }

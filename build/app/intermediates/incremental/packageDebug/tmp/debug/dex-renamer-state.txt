@@ -1,4 +1,4 @@
-#Sun Apr 10 18:37:41 UZT 2022
+#Mon Apr 11 09:51:29 UZT 2022
 base.0=/home/dilbek/Desktop/iBilling/ibilling/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
